@@ -1,0 +1,52 @@
+/* SummaryCards.css */
+
+.summary-card-container {
+    font-family: 'Roboto', sans-serif;
+    justify-content: center;
+  }
+  
+  .summary-card {
+    min-height: 120px;
+    text-align: center;
+    background-color:  #D3D3D3!important; /* Set background to dark color */
+    color: #2A2D3E !important; /* Set text color to #D3D3D3 for contrast */
+    padding: 10px;
+    border-radius: 8px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  
+  .summary-card:hover {
+    box-shadow: 0 4px 16px rgba(255, 255, 255, 0.4); /* Lighter shadow for better visibility */
+    transform: translateY(-5px);
+  }
+  
+  .summary-card-icon {
+    font-size: 2rem;
+    margin-bottom: 8px;
+  }
+  
+  .total-evs-icon {
+    color: #1E88E5; /* Icon color for total EVs */
+  }
+  
+  .avg-range-icon {
+    color: #FFB300; /* Icon color for average range */
+  }
+  
+  .popular-make-icon {
+    color: #E53935; /* Icon color for popular make */
+  }
+  
+  .popular-city-icon {
+    color: #43A047; /* Icon color for popular city */
+  }
+  
+  .summary-card-title {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  
+  .summary-card-value {
+    font-size: 1.2rem;
+  }
+  

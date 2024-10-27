@@ -1,0 +1,65 @@
+.data-table {
+    margin: 2rem auto; /* Center the table with some margin */
+    max-width: 100%; /* Set max width to 100% to fill the container */
+    background-color: #2A2D3E !important; /* Background color matching dark theme */
+    color: #ffffff; /* White text for contrast */
+}
+
+.data-table .card {
+    border-radius: 8px; /* Rounded corners for the card */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+}
+
+.data-table .table {
+    margin: 0; /* Remove default margin */
+    width: 100%; /* Ensure table takes full width */
+}
+
+.data-table th, 
+.data-table td {
+    text-align: center; /* Center align all header and data cells */
+    padding: 10px; /* Add padding for better spacing */
+    background-color: #343a40 !important; /* Darker background for table rows */
+    color: #ffffff; /* White text color */
+}
+
+.data-table th {
+    background-color: #495057 !important; /* Slightly lighter background for table headers */
+    font-weight: bold; /* Bold font for header */
+}
+
+.data-table .expanded-table {
+    margin-top: 1rem; /* Add margin on top of the expanded table */
+}
+
+.data-table .row {
+    cursor: pointer; /* Indicate that rows are clickable */
+    transition: background-color 0.3s; /* Smooth background transition */
+}
+
+.data-table .row:hover {
+    background-color: rgba(53, 162, 235, 0.3); /* Highlight on hover */
+}
+
+.data-table .card-title {
+    font-size: 1.5rem; /* Larger title font size */
+    font-weight: bold; /* Bold title */
+    text-align: center; /* Center title */
+}
+
+.scrollable-table {
+    max-height: 400px; /* Same height as your TableContainer */
+    overflow-y: auto; /* Allow vertical scrolling */
+}
+
+/* Hide scrollbar for Webkit browsers */
+.scrollable-table::-webkit-scrollbar {
+    width: 0; /* Remove scrollbar space */
+    background: transparent; /* Optional: just make it invisible */
+}
+
+/* Hide scrollbar for Firefox */
+.scrollable-table {
+    scrollbar-width: none; /* For Firefox */
+}
+

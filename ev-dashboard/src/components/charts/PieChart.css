@@ -1,0 +1,32 @@
+/* src/components/charts/PieChart.css */
+
+.pie-chart-container {
+    display: flex;
+    justify-content: center; /* Center align the pie charts */
+    align-items: center; /* Align items vertically */
+    margin: 20px 0; /* Add margin for spacing */
+}
+
+.pie-chart-card {
+    width: 40%; /* Width of each card */
+    margin: 10px; /* Space between cards */
+    padding: 20px; /* Inner padding */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Shadow effect for the card */
+    background-color: #ffffff; /* Card background color */
+    display: flex;
+    flex-direction: column; /* Stack heading and chart */
+    align-items: center; /* Center align contents */
+}
+
+.pie-chart-card h2 {
+    text-align: center; /* Center align the chart title */
+    margin-bottom: 10px; /* Space below the title */
+    font-size: 18px; /* Adjust title font size */
+}
+
+.pie-chart canvas {
+    max-width: 100%; /* Ensure chart does not exceed container width */
+    max-height: 100%; /* Ensure chart does not exceed container height */
+    transform: perspective(800px) rotateX(10deg) rotateY(0deg); /* Apply 3D rotation */
+}
