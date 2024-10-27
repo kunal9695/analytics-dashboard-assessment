@@ -1,4 +1,3 @@
-// src/components/charts/ElectricRangeHistogram.js
 import React from 'react';
 import { Bar } from 'react-chartjs-2';
 import {
@@ -12,42 +11,36 @@ import {
 } from 'chart.js';
 import './ElectricRangeHistogram.css';
 
-// Register components
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 const ElectricRangeHistogram = ({ data }) => {
-    // Define bins for electric range
-    const bins = Array.from({ length: 10 }, (_, i) => i * 30); // Creates bins: [0, 30, 60, ..., 270]
+    const bins = Array.from({ length: 10 }, (_, i) => i * 30);
 
-    // Prepare data for the histogram
     const histogramData = Array(bins.length).fill(0);
 
     data.forEach(item => {
         const electricRange = Number(item['Electric Range']);
         if (!isNaN(electricRange)) {
-            // Find the appropriate bin
             const binIndex = Math.floor(electricRange / 30);
             if (binIndex < histogramData.length) {
-                histogramData[binIndex] += 1; // Increment count in the appropriate bin
+                histogramData[binIndex] += 1;
             }
         }
     });
 
-    // Prepare chart data
     const chartData = {
         labels: bins.map((bin, index) => (index < bins.length - 1 ? `${bin} - ${bin + 30}` : `${bin} +`)),
         datasets: [
             {
                 label: 'Frequency of Electric Ranges',
                 data: histogramData,
-                backgroundColor: 'rgba(135, 206, 250, 0.6)', // Slightly lighter color
-                borderColor: 'rgba(135, 206, 250, 1)', // Slightly lighter border color
+                backgroundColor: 'rgba(135, 206, 250, 0.6)',
+                borderColor: 'rgba(135, 206, 250, 1)',
                 borderWidth: 1,
             },
         ],
     };
 
-    // Options for the Histogram
     const options = {
         responsive: true,
         plugins: {
@@ -75,18 +68,18 @@ const ElectricRangeHistogram = ({ data }) => {
                     display: true,
                     text: 'Frequency',
                     font: {
-                        size: 20, // Increase title font size
+                        size: 20,
                     },
                     color: '#ffffff',
                 },
                 ticks: {
                     font: {
-                        size: 12, // Increase label font size
+                        size: 12,
                     },
-                    color: '#ffffff', // Adjust tick color if needed
+                    color: '#ffffff',
                 },
                 grid: {
-                    color: '#444444', // Darker grid line color
+                    color: '#444444',
                 },
             },
             x: {
@@ -94,18 +87,18 @@ const ElectricRangeHistogram = ({ data }) => {
                     display: true,
                     text: 'Electric Range (miles)',
                     font: {
-                        size: 20, // Increase title font size
+                        size: 20,
                     },
                     color: '#ffffff',
                 },
                 ticks: {
                     font: {
-                        size: 12, // Increase label font size
+                        size: 12,
                     },
-                    color: '#ffffff', // Adjust tick color if needed
+                    color: '#ffffff',
                 },
                 grid: {
-                    color: '#444444', // Darker grid line color
+                    color: '#444444',
                 },
             },
         },

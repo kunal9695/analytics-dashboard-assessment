@@ -1,7 +1,6 @@
-/* ElectricRangeHistogram.css */
 .histogram-title {
-    text-align: center; /* Center align the title */
-    color: #FFD700; /* Change color if needed */
-    margin-bottom: 20px; /* Space below the title */
-    font-size: 1.5rem; /* Increase title font size if needed */
+    text-align: center; 
+    color: #FFD700; 
+    margin-bottom: 20px; 
+    font-size: 1.5rem;
 }

@@ -1,4 +1,3 @@
-// src/components/charts/BarChart.js
 import React from 'react';
 import { Bar } from 'react-chartjs-2';
 import {
@@ -11,37 +10,32 @@ import {
     Legend
 } from 'chart.js';
 
-// Register components
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 const BarChart = ({ data }) => {
-    // Count vehicles by make
     const vehicleCountByMake = data.reduce((acc, item) => {
         const make = item.Make;
-        acc[make] = (acc[make] || 0) + 1; // Increment count for each make
+        acc[make] = (acc[make] || 0) + 1;
         return acc;
     }, {});
 
-    // Convert to array and sort by count in descending order
     const sortedMakes = Object.entries(vehicleCountByMake)
-        .sort((a, b) => b[1] - a[1]) // Sort by count
-        .slice(0, 5); // Get top 5
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 5);
 
-    // Prepare chart data
     const chartData = {
-        labels: sortedMakes.map(entry => entry[0]), // Labels are the makes
+        labels: sortedMakes.map(entry => entry[0]),
         datasets: [
             {
                 label: 'Number of Vehicles',
-                data: sortedMakes.map(entry => entry[1]), // Values are the counts
-                backgroundColor: 'rgba(75, 192, 192, 0.5)', // Keep existing bar color
-                borderColor: 'rgba(75, 192, 192, 1)', // Keep existing border color
+                data: sortedMakes.map(entry => entry[1]),
+                backgroundColor: 'rgba(75, 192, 192, 0.5)',
+                borderColor: 'rgba(75, 192, 192, 1)',
                 borderWidth: 1,
             },
         ],
     };
 
-    // Options for the Bar chart
     const options = {
         responsive: true,
         plugins: {
@@ -52,7 +46,7 @@ const BarChart = ({ data }) => {
                 display: true,
                 text: 'Top 5 Makes by Vehicle Count',
                 font: {
-                    size: 18, // Increase title font size
+                    size: 18,
                 },
                 color: '#FFD700',
             },
@@ -61,7 +55,7 @@ const BarChart = ({ data }) => {
                     label: (tooltipItem) => {
                         const label = tooltipItem.label || '';
                         const value = tooltipItem.raw || 0;
-                        return `${label}: ${value} vehicles`; // Display count in tooltip
+                        return `${label}: ${value} vehicles`;
                     },
                 },
             },
@@ -73,18 +67,18 @@ const BarChart = ({ data }) => {
                     display: true,
                     text: 'Number of Vehicles',
                     font: {
-                        size: 20, // Increase title font size
+                        size: 20,
                     },
                     color: '#ffffff',
                 },
                 ticks: {
                     font: {
-                        size: 12, // Increase label font size
+                        size: 12,
                     },
-                    color: '#ffffff', // Adjust tick color
+                    color: '#ffffff',
                 },
                 grid: {
-                    color: '#444444', // Darker grid line color
+                    color: '#444444',
                 },
             },
             x: {
@@ -92,18 +86,18 @@ const BarChart = ({ data }) => {
                     display: true,
                     text: 'Make',
                     font: {
-                        size: 20, // Increase title font size
+                        size: 20,
                     },
                     color: '#ffffff',
                 },
                 ticks: {
                     font: {
-                        size: 12, // Increase label font size
+                        size: 12,
                     },
-                    color: '#ffffff', // Adjust tick color
+                    color: '#ffffff',
                 },
                 grid: {
-                    color: '#444444', // Darker grid line color
+                    color: '#444444',
                 },
             },
         },

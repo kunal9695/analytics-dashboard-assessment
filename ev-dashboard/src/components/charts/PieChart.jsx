@@ -1,4 +1,3 @@
-// src/components/charts/PieChart.js
 import React from 'react';
 import {
     PieChart,
@@ -10,23 +9,19 @@ import {
 import './PieChart.css';
 
 const PieChartComponent = ({ data }) => {
-    // Market Share by Make
     const makeCounts = data.reduce((acc, item) => {
         acc[item.Make] = (acc[item.Make] || 0) + 1;
         return acc;
     }, {});
 
-    // Sort makes by count and get the top 6
     const sortedMakes = Object.entries(makeCounts)
         .sort((a, b) => b[1] - a[1])
         .slice(0, 6);
 
-    // Calculate total vehicles in other makes
     const totalOthers = Object.entries(makeCounts)
         .slice(6)
         .reduce((acc, curr) => acc + curr[1], 0);
 
-    // Prepare data for market share chart
     const labels = sortedMakes.map(([make]) => make);
     const dataValues = sortedMakes.map(([, count]) => count);
 
@@ -40,7 +35,6 @@ const PieChartComponent = ({ data }) => {
         value: dataValues[index],
     }));
 
-    // Count Electric Vehicle Types
     const typeCounts = data.reduce((acc, item) => {
         const type = item['Electric Vehicle Type'];
         if (type) {
@@ -51,7 +45,6 @@ const PieChartComponent = ({ data }) => {
 
     const typePieData = Object.entries(typeCounts).map(([name, value]) => ({ name, value }));
 
-    // Darker colors for a dark theme
     const COLORS = [
         '#1f77b4',
         '#ff7f0e',
@@ -59,23 +52,23 @@ const PieChartComponent = ({ data }) => {
         '#d62728',
         '#9467bd',
         '#8c564b',
-        '#e377c2', // Additional color for 'Other Manufacturers'
+        '#e377c2',
     ];
 
     return (
         <div className="pie-chart-container">
             <div className="pie-chart-card" style={{ backgroundColor: '#333646', padding: '20px', borderRadius: '8px' }}>
                 <h2>Market Share by Make</h2>
-                <PieChart width={500} height={400}> {/* Increased size */}
+                <PieChart width={500} height={400}>
                     <Pie
                         data={makePieData}
                         dataKey="value"
                         nameKey="name"
                         cx="50%"
                         cy="50%"
-                        outerRadius={100} // Adjusted outer radius for better appearance
+                        outerRadius={100}
                         fill="#8884d8"
-                        label={false} // Disable labels when not hovering
+                        label={false}
                     >
                         {makePieData.map((entry, index) => (
                             <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
@@ -87,16 +80,16 @@ const PieChartComponent = ({ data }) => {
             </div>
             <div className="pie-chart-card" style={{ backgroundColor: '#333646', padding: '20px', borderRadius: '8px' }}>
                 <h2>Electric Vehicle Type Distribution</h2>
-                <PieChart width={500} height={400}> {/* Increased size */}
+                <PieChart width={500} height={400}>
                     <Pie
                         data={typePieData}
                         dataKey="value"
                         nameKey="name"
                         cx="50%"
                         cy="50%"
-                        outerRadius={100} // Adjusted outer radius for better appearance
+                        outerRadius={100}
                         fill="#8884d8"
-                        label={false} // Disable labels when not hovering
+                        label={false}
                     >
                         {typePieData.map((entry, index) => (
                             <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />

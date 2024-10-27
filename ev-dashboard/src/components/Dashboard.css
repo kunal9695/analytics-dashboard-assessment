@@ -1,107 +1,97 @@
 body {
-    background-color: #2A2D3E; /* Dark background for the entire body */
-    color: #ffffff; /* White text color for general content */
+    background-color: #2A2D3E;
+    color: #ffffff;
 }
 
 .dashboard-container {
-    padding: 20px; /* Padding around the dashboard */
-    background-color: #2A2D3E; /* Consistent background color */
+    padding: 20px;
+    background-color: #2A2D3E;
 }
 
-/* Header Styles */
 .header {
-    display: flex; /* Flexbox for alignment */
-    justify-content: space-between; /* Space between header items */
-    align-items: center; /* Center alignment */
-    background-color: #1F222C; /* Darker background for header */
-    padding: 15px; /* Remove left and right padding */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1F222C;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .header h1 {
-    color: #FFD700; /* Gold color for the header text for contrast */
-    font-size: 2rem; /* Size of the header */
-    margin: 0; /* Remove default margin */
-    display: flex; /* Flexbox for aligning icon and text */
-    align-items: center; /* Center the icon with text */
+    color: #FFD700;
+    font-size: 2rem;
+    margin: 0;
+    display: flex;
+    align-items: center;
 }
 
-/* Centered Heading Style */
 .centered-heading {
-    text-align: center; /* Center align the heading text */
+    text-align: center;
 }
 
-/* Icon style */
 .header-icon {
-    margin-right: 10px; /* Space between the icon and heading */
+    margin-right: 10px;
 }
 
-/* Right side icons */
 .header-icons {
-    display: flex; /* Flexbox for right-side icons */
-    align-items: center; /* Center alignment */
+    display: flex;
+    align-items: center;
 }
 
 .header-icons .icon {
-    color: #FFD700; /* Color for the icons */
-    margin-left: 15px; /* Space between icons */
-    cursor: pointer; /* Pointer cursor for interactivity */
+    color: #FFD700;
+    margin-left: 15px;
+    cursor: pointer;
 }
 
-/* Summary Cards */
 .summary-cards {
-    display: flex; /* Flexbox layout */
-    justify-content: space-around; /* Space between cards */
-    margin-bottom: 20px; /* Space below summary cards */
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
 }
 
-/* Chart and Table Card Styles */
-.chart-card, 
+.chart-card,
 .table-card {
-    background-color: #333646; /* Darker background for cards */
-    border-radius: 8px; /* Rounded corners */
-    padding: 20px; /* Padding inside the cards */
-    color: #ffffff; /* White text color */
-    margin-bottom: 20px; /* Space below each card */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+    background-color: #333646;
+    border-radius: 8px;
+    padding: 20px;
+    color: #ffffff;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-/* Charts Container */
 .charts-container {
-    display: flex; /* Flexbox layout for charts */
-    justify-content: space-between; /* Space between chart items */
-    flex-wrap: wrap; /* Allow wrapping of items */
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
-/* Chart Item Styles */
 .chart-item {
-    flex: 1 1 45%; /* Flex grow, shrink, and basis */
-    margin: 10px; /* Margin around each chart */
-    min-width: 300px; /* Minimum width for responsiveness */
+    flex: 1 1 45%;
+    margin: 10px;
+    min-width: 300px;
 }
 
-/* Data Table Container */
 .data-table-container {
-    margin-top: 20px; /* Space above the data table */
+    margin-top: 20px;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
     .summary-cards {
-        flex-direction: column; /* Stack summary cards vertically */
-        align-items: center; /* Center align cards */
+        flex-direction: column;
+        align-items: center;
     }
 
     .chart-item {
-        flex: 1 1 100%; /* Full width on smaller screens */
+        flex: 1 1 100%;
     }
 
     .header {
-        flex-direction: column; /* Stack header elements on smaller screens */
-        align-items: flex-start; /* Left-align on smaller screens */
+        flex-direction: column;
+        align-items: flex-start;
     }
 
     .header h1 {
-        font-size: 1.5rem; /* Smaller font size for header on mobile */
+        font-size: 1.5rem;
     }
 }

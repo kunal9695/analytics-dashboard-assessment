@@ -1,4 +1,3 @@
-// src/components/charts/LineChart.js
 import React from 'react';
 import { Line } from 'react-chartjs-2';
 import {
@@ -12,11 +11,9 @@ import {
     Legend
 } from 'chart.js';
 
-// Register components
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
 const LineChart = ({ data }) => {
-    // Filter and prepare data for the line chart
     const yearsData = data.reduce((acc, item) => {
         const year = item['Model Year'];
         const electricRange = Number(item['Electric Range']);
@@ -33,8 +30,6 @@ const LineChart = ({ data }) => {
 
     const sortedYears = Object.keys(yearsData).sort();
     const averageElectricRange = sortedYears.map(year => (yearsData[year].totalElectricRange / yearsData[year].count).toFixed(2));
-
-    // Prepare chart data
     const chartData = {
         labels: sortedYears,
         datasets: [
@@ -49,8 +44,6 @@ const LineChart = ({ data }) => {
             },
         ],
     };
-
-    // Options for the Line chart
     const options = {
         responsive: true,
         plugins: {
